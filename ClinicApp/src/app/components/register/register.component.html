@@ -1,0 +1,52 @@
+<body>
+
+  <div class="container">
+    <div class="header">{{"navbar.r" | translate}}</div>
+  <form [formGroup]="registerForm" autocomplete="off">
+    <div class = "wrapper">
+
+      <mat-form-field class="center" appearance="fill">
+        <mat-label class="placeholder-color">Email</mat-label>
+          <input formControlName="userName" matInput  >
+
+          <button mat-icon-button matSuffix>
+            <mat-icon>account_circle</mat-icon>
+          </button>
+      </mat-form-field>
+
+      <mat-form-field class="center" appearance="fill">
+        <mat-label class="placeholder-color">{{"navbar.pass" | translate}}</mat-label>
+          <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+      </mat-form-field>
+
+      <mat-form-field class="center" appearance="fill">
+        <mat-label class="placeholder-color">{{"navbar.cpass" | translate}}</mat-label>
+          <input formControlName="confirmPassword" matInput [type]="hide ? 'password' : 'text'" >
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+          </button>
+          <mat-error *ngIf ="this.registerForm.controls.confirmPassword.hasError('notSame')">
+            Passwords don't match
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label class="placeholder-color">{{"navbar.ac" | translate}}</mat-label>
+          <input formControlName="accesCode" class="input" minLength="6"  maxLength="6"
+           matInput type="number" placeholder="Acces Code" required>
+           <mat-error>Please enter your acces code</mat-error>
+          <button mat-icon-button matSuffix>
+            <mat-icon>https</mat-icon>
+          </button>
+      </mat-form-field>
+
+    </div>
+    <div class="button">
+      <button mat-stroked-button [disabled]="!registerForm.valid" (click)="register()" color="accent">Sign Up</button>
+    </div>
+    </form>
+  </div>
+</body>

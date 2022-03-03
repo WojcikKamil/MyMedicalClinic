@@ -1,0 +1,15 @@
+<div class="margin">
+<div class="card mb-4">
+  <div class = "card-img-wrapper">
+    <a routerLink="/DoctorProfile/{{member.id}}"> <img src="{{member.photoUrl || 'assets/images/default.jpg'}}"
+    class="card-img-top" alt="Doctor Profile"></a>
+  </div>
+  <div class="card-body p-1">
+    <h3 class="card-title text-center mb-1">
+      <h4><em class="fas fa-user-md"></em>
+      {{member.academicDegree}}</h4> {{member.name}} {{member.lastName}}
+    </h3>
+    <p class="card-text text-muted text-center">{{member.specialization || 'GP' | uppercase}}</p>
+  </div>
+</div>
+</div>

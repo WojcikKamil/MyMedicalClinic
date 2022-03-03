@@ -1,0 +1,19 @@
+<div class="container" *ngIf="patient">
+  <h1>{{'patient.mpc' | translate}}</h1>
+  <mat-tab-group>
+
+    <mat-tab label="{{'patient.mbi' | translate}}" *ngIf="patient">
+      <app-patient-edit [patient]="patient"></app-patient-edit>
+    </mat-tab>
+
+    <mat-tab label="{{'patient.mmi' | translate}}" *ngIf="patient">
+      <app-patient-medical-information [patient]="patient"></app-patient-medical-information>
+    </mat-tab>
+
+    <mat-tab label="{{'patient.mah' | translate}}" *ngIf="patientuserName">
+      <app-patient-appointment-history [patientuserName]="patientuserName"></app-patient-appointment-history>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+

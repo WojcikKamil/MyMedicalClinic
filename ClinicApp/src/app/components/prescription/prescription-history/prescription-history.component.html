@@ -1,0 +1,26 @@
+<div class="container">
+
+  <div class="row">
+    <table class="table table-striped">
+      <h1>{{'prescription.ph' | translate}}</h1>
+      <thead>
+      <tr>
+        <th style="width:20%">Date</th>
+        <th style="width:20%">{{'prescription.ds' | translate}}</th>
+        <th style="width:20%">{{'prescription.s' | translate}}</th>
+        <th style="width:20%">{{'prescription.sd' | translate}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let prescription of prescription$ | async">
+        <td>{{prescription?.prescriptionAccepted | date:'longDate'}}
+        <td>{{prescription?.specialization}}</td>
+        <td>{{prescription?.status}}</td>
+        <td><button mat-stroked-button (click)="openPrescription(prescription)">{{'prescription.sd' | translate}}</button></td>
+      </tr>
+    </tbody>
+
+    </table>
+  </div>
+  </div>

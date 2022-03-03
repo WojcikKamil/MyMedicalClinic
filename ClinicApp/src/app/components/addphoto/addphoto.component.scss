@@ -1,0 +1,30 @@
+img.img-thumbnail{
+  height: 200px;
+  min-width: 300px !important;
+  margin-bottom: 2px;
+}
+
+.nv-file-over{
+  border: dotted 3px red;
+}
+
+input[type=file]{
+  color: transparent;
+}
+
+.my-drop-zone {
+  border: dotted 3px lightgray;
+ }
+
+.nv-file-over {
+  border: dotted 3px red;
+} /* Default class applied to drop zones on over */
+
+.another-file-over-class {
+  border: dotted 3px green;
+}
+
+.row{
+  margin-top: 20px;
+  margin-left: 20px;
+}

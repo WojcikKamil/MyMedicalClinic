@@ -1,0 +1,23 @@
+
+  <div class="row">
+    <table class="table table-striped">
+      <h1>{{'symptom.rsh' | translate}}</h1>
+      <thead>
+      <tr>
+        <th style="width:25%">{{'symptom.dn' | translate}}</th>
+        <th style="width:25%">{{'symptom.dln' | translate}}</th>
+        <th style="width:25%">{{'prescription.sd' | translate}}</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let symptom of symptom$ | async">
+        <td>{{symptom?.doctorName}}</td>
+        <td>{{symptom?.doctorLastName}}</td>
+        <td><button mat-stroked-button (click)="openSymptom(symptom)">{{'prescription.sd' | translate}}</button></td>
+      </tr>
+    </tbody>
+
+    </table>
+  </div>
+

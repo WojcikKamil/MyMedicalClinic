@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="modal-header">
+    <h1 class="modal-title pull-left">{{'modal.rf' | translate}} {{symptom?.patientName}} {{symptom?.patientLastName}}</h1>
+    <button type="button" class="close pull-right" aria-label="Close"
+    (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+
+      <h2>Symptom: {{symptom?.worryingSymptom}}</h2>
+
+      <form #updateSymptom = "ngForm" id="updateSymptom"
+      >
+
+      <div *appHasRole='["Admin"]'>
+        <input name ="id" [(ngModel)]="symptom.id">
+        <input name = "doctorEmail" [(ngModel)]="symptom.doctorEmail">
+        <input name = "doctorName" [(ngModel)]="symptom.doctorName">
+        <input name = "doctorLastName" [(ngModel)]="symptom.doctorLastName" >
+      </div>
+
+      <div class = "content">
+      <mat-form-field appearance="fill">
+        <mat-label >{{'modal.ya' | translate}} :</mat-label>
+        <textarea name="doctorAnswer" [(ngModel)]="symptom.doctorAnswer" matInput rows="6"></textarea>
+      </mat-form-field>
+      </div>
+      </form>
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{'appointment.c' | translate}}</button>
+      <button type="button" class="btn btn-succes" (click)="UpdateSymptomAnswer()">{{'appointment.s' | translate}}</button>
+    </div>
+  </div>

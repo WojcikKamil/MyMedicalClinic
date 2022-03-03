@@ -1,0 +1,57 @@
+<div class="contariners">
+<div class="row" *ngIf="member">
+  <div class="col-sm-3">
+    <div class="card-img">
+      <img src="{{member.photoUrl || 'assets/images/default.jpg'}}"
+      class="card-img-top img-thumbnail">
+        <div class="card-body">
+          <div class="center">
+            <h1> <h3><em class="fas fa-user-md"></em>
+              {{member.academicDegree}}</h3> {{member.name}} {{member.lastName}}</h1>
+          </div>
+          <div class="center">
+            <strong>{{'editprofile.spec' | translate}}</strong>
+            <h4>{{member.specialization | uppercase}}</h4>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div class="mycol">
+  <mat-tab-group>
+
+    <mat-tab label="{{'doctorprofil.a' | translate}}">
+    <div class="space">
+      <h1><i class="fas fa-address-card"></i>{{'doctorprofil.ad' | translate}}</h1>
+        <p>{{member.introduction}}</p>
+    </div>
+
+    <div class="space">
+      <h1><i class="fas fa-user-graduate"></i>{{'doctorprofil.uni' | translate}}</h1>
+        <p>{{member.university}}</p>
+    </div>
+
+    <div class="space">
+      <h1><i class="fas fa-stethoscope"></i>{{'doctorprofil.senio' | translate}}</h1>
+        <p>{{member.seniority}} {{'doctorprofil.y' | translate}}</p>
+    </div>
+
+    <div class="space">
+      <h1><i class="fas fa-university"></i>{{'editprofile.edu' | translate}}</h1>
+        <p>{{member.postgraduateEducation}}</p>
+    </div>
+    </mat-tab>
+
+    <mat-tab label="Messages" *appHasRole='["Doctor"]'>
+      <app-member-messages [userName]="member.userName"></app-member-messages>
+    </mat-tab>
+
+    <mat-tab label="Office">
+      <h1>Office works</h1>
+    </mat-tab>
+
+
+
+  </mat-tab-group>
+</div>
+</div>

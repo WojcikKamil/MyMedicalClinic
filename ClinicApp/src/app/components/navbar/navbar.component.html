@@ -1,0 +1,26 @@
+<mat-toolbar color='custom' class="toolbar">
+<div class="title">
+  <em class="fas fa-clinic-medical" routerLink="/"> Medical Clinic</em>
+</div>
+
+<div class="const">
+  <a mat-button routerLink="AboutUs">{{"navbar.about" | translate}}</a>
+  <a mat-button routerLink="Offer">{{"navbar.offer" | translate}}</a>
+  <!--<a mat-button routerLink="errors">Errors</a> -->
+</div>
+
+<div class="right" *ngIf="(accountService.currentUser$ | async) === null">
+  <input type="image" src="assets/images/united-kingdom.png" (click)="useLanguage('en')"/>
+  <input type="image" src="assets/images/poland.png" (click)="useLanguage('pl')"/>
+  <a mat-button routerLink="SignUp">{{"navbar.signup" | translate}}</a>
+  <a mat-button routerLink="SignIn">{{"navbar.signin" | translate}}</a>
+</div>
+
+<div class="right" *ngIf="(accountService.currentUser$ | async) as user">
+  <input type="image" src="assets/images/united-kingdom.png" (click)="useLanguage('en')"/>
+  <input type="image" src="assets/images/poland.png" (click)="useLanguage('pl')"/>
+  <a mat-button (click)="openMyProfileDialog()">{{"navbar.welcome" | translate}} {{user.name}} {{user.lastName}}</a>
+  <a mat-button (click)="logout()">{{"navbar.logout" | translate}}</a>
+</div>
+
+</mat-toolbar>

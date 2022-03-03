@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="modal-header">
+    <h1 class="modal-title pull-left">{{'modal.rsss' | translate}}</h1>
+    <button type="button" class="close pull-right" aria-label="Close"
+    (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+      <div>
+        <h2><i class="fas fa-thumbtack"></i></h2>
+        <h3>{{'modal.h3' | translate}}<p1 (click)="destroy()" routerLink="SymptomRequestedHistory"> {{'modal.rs' | translate}}</p1></h3>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{'appointment.c' | translate}}</button>
+    </div>
+  </div>

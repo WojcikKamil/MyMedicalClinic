@@ -1,0 +1,18 @@
+.row{
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+}
+
+.table {
+  justify-content: center;
+  align-items: center;
+   /* 140px * 5 column + 16px scrollbar width */
+  border-spacing: 0;
+  height: 400px;
+  white-space: nowrap;
+  overflow-y: scroll;
+  display: block;
+  margin-bottom: 100px;
+  background: white;
+}

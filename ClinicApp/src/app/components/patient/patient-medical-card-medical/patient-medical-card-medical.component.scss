@@ -1,0 +1,34 @@
+.container{
+  margin-top: 30px;
+  background: white;
+  border-radius: 5px;
+  padding: 30px 30px;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+}
+
+
+h1{
+  font-size: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+h2{
+  font-size: 25px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+h3{
+
+  font-size: 20px;
+}
+
+b{
+  font-weight: 500;
+}

@@ -1,0 +1,63 @@
+<div class="settings-container">
+    <div class="title">{{'dialog.header' | translate}}</div>
+
+      <div class="items">
+
+        <div *appHasRole='["Patient"]' class="center">
+          <button mat-stroked-button mat-dialog-close routerLink="PatientBasicInformation">{{'dialog.patientcard' | translate}}</button>
+        </div>
+
+        <div class="center">
+          <button mat-stroked-button mat-dialog-close routerLink="DoctorList">{{'dialog.doctorlist' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Doctor"]' class="center">
+          <button mat-stroked-button mat-dialog-close routerLink="PatientList">{{'dialog.patientlist' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Doctor"]' class="center">
+          <button mat-stroked-button mat-dialog-close routerLink="EditProfile/edit">{{'dialog.editprofile' | translate}}</button>
+        </div>
+
+        <!-- <div *appHasRole='["Doctor"]' class="center">
+          <button mat-stroked-button mat-dialog-close routerLink="Messages">{{'dialog.messages' | translate}}</button>
+        </div> -->
+
+        <div *appHasRole='["Admin"]' class="center">
+          <button mat-stroked-button mat-dialog-close routerLink="admin">{{'dialog.admin' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Patient"]' class="center">
+          <button mat-stroked-button mat-dialog-close (click)="openPrescription(member)">{{'dialog.prescriptionrequest' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Doctor"]' class="center">
+          <button mat-stroked-button mat-dialog-close [matBadge]="RequestNumber" matBadgeSize="large"
+           routerLink="PrescriptionRequests">{{'dialog.prescription' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Patient"]' class="center">
+          <button mat-stroked-button mat-dialog-close (click)="openSymptom()">{{'dialog.addsymptom' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Doctor"]' class="center">
+          <button mat-stroked-button mat-dialog-close
+           routerLink="SymptomRequests">{{'dialog.requestedsymptos' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Patient"]' class="center">
+          <button mat-stroked-button mat-dialog-close
+          routerLink="PrescriptionRequestHistory">{{'dialog.prescriptionrequesthistory' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["Patient"]' class="center">
+          <button mat-stroked-button mat-dialog-close
+          routerLink="SymptomRequestedHistory">{{'dialog.patientrequestedsymptom' | translate}}</button>
+        </div>
+
+        <div *appHasRole='["WardClerk"]' class="center">
+          <button mat-stroked-button mat-dialog-close
+          routerLink="WardClerkManagement">{{'dialog.wc' | translate}}</button>
+        </div>
+      </div>
+</div>

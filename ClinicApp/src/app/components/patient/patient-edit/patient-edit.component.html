@@ -1,0 +1,129 @@
+<div class="container">
+<div class="row">
+
+  <div class="center">
+    <div class="alert alert-info" *ngIf="editFormPatientCard.dirty">
+      <strong>{{'patient.inf' | translate}}</strong> Any unsaved changes will be lost
+    </div>
+  </div>
+
+  <form #editFormPatientCard="ngForm" id="editFormPatientCard" (ngSubmit)="updatePatientCard()">
+
+    <div class="details">
+
+      <div class="left">
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'doctorbasic.name' | translate}}</mat-label>
+            <input name = "name" [(ngModel)]="patient.name" class="input" matInput placeholder="Name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.pob' | translate}}</mat-label>
+            <input name = "birthPlace" [(ngModel)]="patient.birthPlace" class="input" matInput placeholder="Birth place" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.gen' | translate}}</mat-label>
+            <mat-select name = "gender" [(ngModel)]="patient.gender" class="input" required>
+              <mat-option value="Female">{{'patient.fem' | translate}}</mat-option>
+              <mat-option value="Male">{{'patient.mal' | translate}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'doctorbasic.nat' | translate}}</mat-label>
+            <input name = "nationality" [(ngModel)]="patient.nationality" class="input" matInput placeholder="Your Nationality" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.coun' | translate}}</mat-label>
+            <input name = "country" [(ngModel)]="patient.country" class="input" matInput placeholder="Country">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.str' | translate}}</mat-label>
+            <input name = "street" [(ngModel)]="patient.street" class="input" matInput placeholder="Street" required>
+        </mat-form-field>
+
+      </div>
+
+      <div class="middle">
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.sn' | translate}}</mat-label>
+            <input name = "secondName" [(ngModel)]="patient.secondName" class="input" matInput placeholder="Second Name">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.bd' | translate}}</mat-label>
+          <input name="birthDate" [(ngModel)]="patient.birthDate" matInput [matDatepicker]="picker" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker startView="year" [startAt]="startDate"></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.mn' | translate}}</mat-label>
+            <input name = "motherName" [(ngModel)]="patient.motherName" class="input" matInput placeholder="Your Mother Name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.id' | translate}}</mat-label>
+            <input name = "idCard" [(ngModel)]="patient.idCard" class="input" matInput placeholder="ID Card" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.voi' | translate}}</mat-label>
+            <input name = "voivodeship" [(ngModel)]="patient.voivodeship" class="input" matInput placeholder="Voivodeship" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.hn' | translate}}</mat-label>
+            <input name = "homeNumber" [(ngModel)]="patient.homeNumber" class="input" matInput placeholder="Home Number" required>
+        </mat-form-field>
+
+      </div>
+
+
+      <div class="right">
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'doctorbasic.ln' | translate}}</mat-label>
+            <input name = "lastName" [(ngModel)]="patient.lastName" class="input" matInput placeholder="Last Name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">PESEL</mat-label>
+            <input name = "pesel" [(ngModel)]="patient.pesel" length="11" class="input" matInput placeholder="Your PESEL" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.fn' | translate}}</mat-label>
+            <input name = "fatherName" [(ngModel)]="patient.fatherName" class="input" matInput placeholder="Your Father Name" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.pn' | translate}}</mat-label>
+            <input name = "phoneNumber" [(ngModel)]="patient.phoneNumber" class="input" matInput placeholder="Your Phone Number" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'doctorbasic.city' | translate}}</mat-label>
+            <input name = "city" [(ngModel)]="patient.city" class="input" matInput placeholder="City">
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'patient.fnr' | translate}}</mat-label>
+            <input name = "flatNumber" [(ngModel)]="patient.flatNumber" class="input" matInput placeholder="Flat Number" required>
+        </mat-form-field>
+
+      </div>
+
+    </div>
+  </form>
+
+</div>
+</div>
+<div class="center">
+  <button type="submit" form="editFormPatientCard" class="btn btn-success btn-block">{{'patient.sav' | translate}}</button>
+</div>

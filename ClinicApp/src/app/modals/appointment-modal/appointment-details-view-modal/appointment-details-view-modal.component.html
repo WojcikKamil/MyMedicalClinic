@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="modal-header">
+    <h1 class="modal-title pull-left">{{'appointment.ade' | translate}}</h1>
+    <button type="button" class="close pull-right" aria-label="Close"
+    (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+
+      <h2>{{'appointment.ad' | translate}}: {{appointment?.appointmentDate | date:'longDate'}}</h2>
+      <h2>{{'doctorbasic.name' | translate}} : {{appointment?.patientName}}</h2>
+      <h2>{{'doctorbasic.ln' | translate}} : {{appointment?.patientLastName}}</h2>
+      <h2>{{'appointment.re' | translate}} : {{appointment?.reason}}</h2>
+      <h2>{{'appointment.di' | translate}} : {{appointment?.diagnosis}}</h2>
+      <h2>{{'appointment.r' | translate}} : {{appointment?.recommendation}}</h2>
+      <h2>{{'appointment.med' | translate}}: {{appointment?.medicines}}</h2>
+      <h2>{{'appointment.do' | translate}} : {{appointment?.dose}}</h2>
+      <h2>{{'appointment.rd' | translate}} : {{appointment?.recommendedDose}}</h2>
+
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{'appointment.c' | translate}}</button>
+    </div>
+  </div>

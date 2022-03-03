@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>{{patient?.name}} {{patient?.lastName}} Card</h1>
+  <mat-tab-group>
+
+    <mat-tab label="{{'patient.pi' | translate}}">
+      <app-patient-profil [patient]="patient"></app-patient-profil>
+    </mat-tab>
+
+    <mat-tab label="{{'patient.mi' | translate}}">
+      <app-patient-medical-card-medical [patient]="patient"></app-patient-medical-card-medical>
+    </mat-tab>
+
+    <mat-tab label = "{{'patient.pm' | translate}}" *ngIf="patientuserName">
+      <app-patient-written-out-medicines [patientuserName]= "patientuserName"></app-patient-written-out-medicines>
+    </mat-tab>
+
+    <mat-tab label="{{'patient.ah' | translate}}" *ngIf="patientuserName">
+      <app-patient-appointment-history [patientuserName]= "patientuserName"></app-patient-appointment-history>
+    </mat-tab>
+
+    </mat-tab-group>
+</div>

@@ -1,0 +1,37 @@
+<div class="container">
+  <h1>{{'prescription.pr' | translate}}</h1>
+
+  <mat-tab-group>
+    <mat-tab label="{{'prescription.r' | translate}}">
+
+      <h1>{{'prescription.wfd' | translate}}</h1>
+
+      <div class="row">
+
+        <table class="table table-striped">
+          <thead>
+          <tr>
+            <th scope="col">{{'prescription.rd' | translate}}</th>
+            <th scope="col">{{'doctorbasic.name' | translate}}</th>
+            <th scope="col">{{'doctorbasic.ln' | translate}}</th>
+            <th scope="col">{{'prescription.pesel' | translate}}</th>
+            <th scope="col">{{'prescription.sd' | translate}}</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let prescription of prescriptions">
+            <td>{{prescription?.prescriptionRequestSent | date:'longDate'}}</td>
+            <td>{{prescription?.patientName}}</td>
+            <td>{{prescription?.patientLastName}}</td>
+            <td>{{prescription?.patientPesel}}</td>
+            <td><button mat-stroked-button (click)="openPrescription(prescription)">{{'prescription.sd' | translate}}</button></td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </mat-tab>
+    <mat-tab label="{{'prescription.c' | translate}}"><app-confirmed-prescriptions></app-confirmed-prescriptions></mat-tab>
+    <mat-tab label="{{'prescription.rej' | translate}}"><app-rejected-prescriptions></app-rejected-prescriptions></mat-tab>
+  </mat-tab-group>
+  </div>

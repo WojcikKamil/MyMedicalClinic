@@ -1,0 +1,32 @@
+<div class="container">
+<div class="row">
+
+  <div class="center">
+    <mat-form-field class="example-full-width" appearance="fill">
+      <mat-label>Search by user Name</mat-label>
+    <input matInput type = "text" #myInput [(ngModel)]="userName" (input)="Search()" />
+    </mat-form-field>
+    &nbsp;
+    <button mat-stroked-button (click)="getUsersWithRoles()">Reset Filter</button>
+  </div>
+
+  <table class="table">
+    <tr>
+      <th style="width:20%">Name</th>
+      <th style="width:20%">Last Name</th>
+      <th style="width:20%">Email</th>
+      <th style="width:20%">Active role</th>
+      <th style="width:20%"></th>
+    </tr>
+
+    <tr *ngFor="let user of users">
+      <td>{{user?.name}}</td>
+      <td>{{user?.lastName}}</td>
+      <td>{{user?.userName}}</td>
+      <td>{{user?.roles}}</td>
+      <td><button (click)="openRolesModal(user)" mat-stroked-button>Edit Roles</button></td>
+    </tr>
+
+  </table>
+</div>
+</div>

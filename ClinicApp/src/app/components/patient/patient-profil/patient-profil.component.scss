@@ -1,0 +1,49 @@
+.container{
+  margin-top: 30px;
+  //border: 1px solid rgb(241, 0, 0);
+  text-align: left;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: white;
+  border-radius: 5px;
+  padding: 30px 30px;
+}
+
+.left{
+  //border: 1px solid green;
+
+}
+
+.right{
+  //border: 1px solid rgb(81, 107, 224);
+
+}
+
+h1{
+  font-size: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+b{
+  font-weight: 500;
+}
+
+h2{
+  font-size: 25px;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.customContainer{
+ text-align: left;
+ border: 1px solid rgb(241, 0, 0);
+}
+
+h3{
+  text-align:left;
+  font-size: 20px;
+}

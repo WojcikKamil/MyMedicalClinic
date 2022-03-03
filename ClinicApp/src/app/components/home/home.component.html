@@ -1,0 +1,13 @@
+<body>
+<div class="wsio" *ngIf="img">
+
+
+  <div class="container">
+    <div class="title">{{'home.word' | translate}} Medical Clinic</div>
+    <div class="text"><p>{{'home.w' | translate }} <b>Medical Clinic</b>{{ 'home.about' | translate }}</p></div>
+    <div class="center">
+      <button mat-stroked-button *ngIf="(accountService.currentUser$ | async) === null" color="accent" routerLink="/SignIn">{{'home.join' | translate}}</button>
+    </div>
+  </div>
+</div>
+</body>

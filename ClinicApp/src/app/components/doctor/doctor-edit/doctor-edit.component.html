@@ -1,0 +1,83 @@
+<div class="containers" *ngIf="doctor">
+<div class="row">
+  <div class="col-4">
+    <h1>{{'editprofile.profil' | translate}} {{doctor.academicDegree}} {{doctor.name}} {{doctor.lastName}}</h1>
+  </div>
+  <div class="col-8">
+    <div class="alert alert-info" *ngIf="editForm.dirty">
+      <strong>{{'editprofile.info' | translate}}</strong> {{'editprofile.changes' | translate}}
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="card-img">
+      <img src="{{doctor.photoUrl || 'assets/images/default.jpg'}}"
+      class="card-img-top img-thumbnail">
+      <div class="text-center" *ngFor="let photo of doctor.photos">
+          <button (click)="deletePhoto(photo.id)"
+          class="btn btn-danger">
+          <em class="fa fa-trash"></em>{{'editprofile.delete' | translate}}</button>
+      </div>
+        <div class="card-body">
+          <div class="center">
+            <h1>{{doctor.name}} {{doctor.lastName}}</h1>
+          </div>
+          <div class="center">
+            <strong>{{'editprofile.spec' | translate}}</strong>
+            <p>{{doctor.specialization}}</p>
+          </div>
+          <div class="card-footer">
+            <div class="btn-group d-flex">
+              <button [disabled]="!editForm.dirty" type="submit" form="editForm" class="btn btn-success btn-block">{{'editprofile.save' | translate}}</button>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+
+<div class="col-6">
+  <mat-tab-group>
+    <mat-tab label="{{'editprofile.about' | translate}}">
+
+      <div class="wrapper">
+       <app-doctor-basic-info [doctor] = "doctor"></app-doctor-basic-info>
+      </div>
+
+    </mat-tab>
+
+    <mat-tab label="{{'editprofile.bas' | translate}}">
+      <form #editForm ="ngForm" id="editForm" (ngSubmit)="updateDoctorProfile()">
+
+
+        <div class="space">
+          <h1>{{'editprofile.about' | translate}}</h1>
+          <textarea class="form-control" [(ngModel)]="doctor.introduction" name="introduction" rows="4"></textarea>
+        </div>
+
+          <div class="space">
+          <h1>{{'editprofile.univ' | translate}}</h1>
+          <textarea class="form-control" [(ngModel)]="doctor.university" name="university" rows="1"></textarea>
+          </div>
+
+        <div class="space">
+          <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'editprofile.grad' | translate}}</mat-label>
+          <input name="graduationTime" [(ngModel)]="doctor.graduationTime" matInput [matDatepicker]="picker" required>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker touchUi #picker startView="year" [startAt]="startDate"></mat-datepicker>
+          </mat-form-field>
+        </div>
+
+        <div class="space">
+          <h1>{{'editprofile.edu' | translate}}</h1>
+          <textarea class="form-control" [(ngModel)]="doctor.postgraduateEducation" name="postgraduateEducation" rows="3"></textarea>
+        </div>
+
+      </form>
+    </mat-tab>
+    <mat-tab label="{{'editprofile.photo' | translate}}">
+      <app-addphoto [doctor] = "doctor" ></app-addphoto>
+    </mat-tab>
+
+  </mat-tab-group>
+</div>
+</div>

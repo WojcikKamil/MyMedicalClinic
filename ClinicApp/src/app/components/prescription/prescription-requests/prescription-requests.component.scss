@@ -1,0 +1,113 @@
+
+.row{
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  background-color: white;
+  border: 5px solid #17124b;
+  border-radius: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 80%;
+  margin-right: -40%;
+  transform: translate(-50%, -50%);
+  padding: 20px 20px;
+  border-radius: 20px;
+  margin-bottom: 5%;
+}
+
+.table {
+  justify-content: center;
+  align-items: center;
+   /* 140px * 5 column + 16px scrollbar width */
+  max-height: 500px;
+  border-collapse: collapse;
+  white-space: nowrap;
+  overflow-y: auto;
+  display: inline-block !important;
+  min-height: rem-calc(340);
+}
+
+td {
+
+}
+
+button{
+  font-weight: 500;
+}
+
+tr:nth-child(odd) {
+  background-color: #dad8d9;
+}
+
+ tr:nth-child(even) {
+  background-color: #d4e8f8;
+}
+
+table th, tfoot th, tfoot td {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1), rgba(0,0,0,0.5));
+}
+
+h1{
+  text-align: center;
+  align-items:center;
+  margin-top: 2%;
+}
+
+
+th, td {
+  padding: 20px;
+}
+
+td{
+  vertical-align:middle;
+}
+
+mat-tab-group{
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+	/* Force table to not be like tables anymore */
+	table, thead, tbody, th, td, tr {
+		display: block;
+	}
+
+	/* Hide table headers (but not display: none;, for accessibility) */
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr { border: 1px solid #ccc; }
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+	}
+}

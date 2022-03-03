@@ -1,0 +1,34 @@
+<body>
+
+  <div class="container">
+    <div class="header">{{'navbar.signin' | translate}}</div>
+      <form #loginForm="ngForm" (ngSubmit)='login()' autocomplete = "off">
+
+        <div class="content">
+          <mat-form-field appearance="fill">
+            <mat-label class="placeholder-color">Email</mat-label>
+              <input name = "UserName" [(ngModel)]="model.UserName" class="input" matInput placeholder="Email" required>
+              <button mat-icon-button matSuffix>
+                <mat-icon>account_circle</mat-icon>
+              </button>
+          </mat-form-field>
+        </div>
+
+      <div class="content">
+        <mat-form-field appearance="fill">
+          <mat-label class="placeholder-color">{{'navbar.pass' | translate}}</mat-label>
+            <input name = "Password" [(ngModel)]="model.Password" class="input" matInput [type]="hide ? 'password' : 'text'" placeholder="Password" required>
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+          </mat-form-field>
+      </div>
+      <div class = "center margin button">
+        <button mat-stroked-button type="submit">{{'navbar.signin' | translate}}</button>
+      </div>
+      </form>
+      <div class="message">
+        <p>{{'navbar.nyr' | translate}}<a mat-button stroked routerLink="/SignUp">{{'navbar.signup' | translate}}</a></p>
+      </div>
+  </div>
+</body>

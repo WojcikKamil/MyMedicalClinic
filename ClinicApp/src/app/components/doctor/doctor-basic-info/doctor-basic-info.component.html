@@ -1,0 +1,53 @@
+<div class="container">
+
+<div class="wrapper">
+
+<div class="left">
+
+  <mat-form-field appearance="fill">
+    <mat-label>{{'doctorbasic.deg' | translate}}</mat-label>
+    <mat-select [(ngModel)]="doctor.academicDegree" matInput class="input" name="academicDegree" required>
+      <mat-option value="MD">{{'doctorbasic.md' | translate}}</mat-option>
+      <mat-option value="MD-PhD">{{'doctorbasic.mdphd' | translate}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label class="placeholder-color">{{'doctorbasic.name' | translate}}</mat-label>
+    <input name = "name" [(ngModel)]="doctor.name" class="input" matInput placeholder="Name" required>
+</mat-form-field>
+
+<mat-form-field appearance="fill">
+  <mat-label class="placeholder-color">{{'doctorbasic.nat' | translate}}</mat-label>
+    <input name = "nationality" [(ngModel)]="doctor.nationality" class="input" matInput placeholder="Nationality" required>
+</mat-form-field>
+
+</div>
+
+<div class="right">
+
+  <mat-form-field appearance="fill">
+    <mat-label class="placeholder-color">{{'editprofile.spec' | translate}}</mat-label>
+    <mat-select name = "specialization" [(ngModel)]="doctor.specialization" matInput class="input" required>
+      <mat-option value="GP">{{'doctorbasic.gp' | translate}}</mat-option>
+      <mat-option value="Psychiatrist">{{'doctorbasic.psych' | translate}}</mat-option>
+      <mat-option value="Gynaecology">{{'doctorbasic.gyn' | translate}}</mat-option>
+      <mat-option value="Internist">{{'doctorbasic.int' | translate}}</mat-option>
+      <mat-option value="Paediatrician">{{'doctorbasic.paed' | translate}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label class="placeholder-color">{{'doctorbasic.ln' | translate}}</mat-label>
+      <input name = "name" [(ngModel)]="doctor.lastName" class="input" matInput placeholder="Last Name" required>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill">
+    <mat-label class="placeholder-color">{{'doctorbasic.city' | translate}}</mat-label>
+      <input name = "city" [(ngModel)]="doctor.city" class="input" matInput placeholder="City" required>
+  </mat-form-field>
+</div>
+
+</div>
+
+</div>

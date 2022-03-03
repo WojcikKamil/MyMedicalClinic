@@ -1,0 +1,33 @@
+.center{
+  text-align: center;
+}
+
+.row{
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.space{
+  margin-top: 50px;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
+app-doctor-basic-info{
+  font-size: 20px !important;
+}
+
+.containers{
+  position: absolute;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  margin-top: 50px;
+  margin-left: 200px;
+  margin-right: 200px;
+  background: white;
+  border-radius: 1%;
+}

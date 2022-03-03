@@ -1,0 +1,37 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr.css';
+
+html, body { height: 100%;}
+body { margin: 0;  font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.navbar {
+  position: unset !important;
+  display: inline !important;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0 0 0 !important;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+}
+
+body {
+  background-image: url('/assets/images/bg9.jpg');
+  /*background-size: cover;*/
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+//AddPhoto
+.mat-tab-body-content {
+  height: 100%;
+  overflow: hidden !important;
+}
+
+
+/* Importing Bootstrap SCSS file. */
+@import "~bootstrap/scss/bootstrap";
+
+/* Importing Datepicker SCSS file. */
+@import "~ngx-bootstrap/datepicker/bs-datepicker";

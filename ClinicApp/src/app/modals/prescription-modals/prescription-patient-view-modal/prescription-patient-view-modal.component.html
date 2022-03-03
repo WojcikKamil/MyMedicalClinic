@@ -1,0 +1,25 @@
+<div class="container">
+  <div class="modal-header">
+    <h1 class="modal-title pull-left">{{'prescription.p' | translate}}</h1>
+    <button type="button" class="close pull-right" aria-label="Close"
+    (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+
+      <h2>{{'doctorbasic.name' | translate}} : {{prescription?.patientName}}</h2>
+      <h2>{{'doctorbasic.ln' | translate}} : {{prescription?.patientLastName}}</h2>
+      <h2>PESEL: {{prescription?.patientPesel}}</h2>
+      <h2>{{'appointment.med' | translate}} : {{prescription?.medicines}}</h2>
+      <h2>{{'appointment.do' | translate}} : {{prescription?.dose}}</h2>
+      <h2>{{'appointment.re' | translate}} : {{prescription?.content}}</h2>
+      <h2>{{'appointment.aps' | translate}} : {{prescription?.status}}</h2>
+
+    </div>
+
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{'appointment.c' | translate}}</button>
+    </div>
+  </div>

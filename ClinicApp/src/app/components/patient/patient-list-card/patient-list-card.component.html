@@ -1,0 +1,17 @@
+
+<div class="row">
+  <table class="table">
+    <tr>
+      <th style="width:30%">{{'doctorbasic.name' | translate}}</th>
+      <th style="width:40%">{{'doctorbasic.ln' | translate}}</th>
+      <th style="width:30%">{{'patient.sc' | translate}}</th>
+    </tr>
+
+    <tr *ngFor="let patient of patients">
+      <td>{{ patient.name }}</td>
+      <td>{{patient.lastName}}</td>
+      <td><button mat-stroked-button routerLink="/PatientProfil/{{patient.id}}">{{'patient.spc' | translate}}</button></td>
+    </tr>
+
+  </table>
+</div>

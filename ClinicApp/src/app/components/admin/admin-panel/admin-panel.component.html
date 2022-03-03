@@ -1,0 +1,16 @@
+<div class="container">
+<h1>Admin Panel</h1>
+
+  <div class= "scrollable">
+    <mat-tab-group>
+
+      <mat-tab label="Users Roles" *appHasRole='["Admin"]'>
+          <app-users-roles-management></app-users-roles-management>
+      </mat-tab>
+
+      <mat-tab label="Temporary Role" *appHasRole='["Admin"]'>
+          <app-temporary-role-management></app-temporary-role-management>
+      </mat-tab>
+    </mat-tab-group>
+  </div>
+</div>

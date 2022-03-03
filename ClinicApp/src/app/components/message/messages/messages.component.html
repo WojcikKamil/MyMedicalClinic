@@ -1,0 +1,20 @@
+<div class ="row mb-4">
+  <div class="btn-group" name='container'>
+    <button mat-stroked-button btnRadio='Unread' [(ngModel)]="container"
+      (click)="loadMessages()">
+      <em class="fa fa-envelope"></em> Unread
+    </button>
+    <button mat-stroked-button btnRadio='Inbox' [(ngModel)]="container"
+      (click)="loadMessages()">
+      <em class="fa fa-envelope-open"></em> Inbox
+    </button>
+    <button mat-stroked-button btnRadio='Outbox' [(ngModel)]="container"
+      (click)="loadMessages()">
+      <em class="fa fa-envelope-plane"></em> Outbox
+    </button>
+  </div>
+</div>
+
+<p *ngFor="let message of messages">{{message?.senderUserName}} {{message?.content}}</p>
+
+

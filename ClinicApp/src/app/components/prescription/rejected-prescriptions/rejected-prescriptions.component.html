@@ -1,0 +1,25 @@
+<h1> {{'prescription.rej' | translate}}  </h1>
+<div class="row">
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th style="width:20%">{{'prescription.rd' | translate}}</th>
+      <th style="width:20%">{{'doctorbasic.name' | translate}}</th>
+      <th style="width:20%">{{'doctorbasic.ln' | translate}}</th>
+      <th style="width:20%">{{'prescription.pesel' | translate}}</th>
+      <th style="width:20%">{{'prescription.sd' | translate}}</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    <tr *ngFor="let prescription of prescription$ | async">
+      <td>{{prescription?.prescriptionRequestSent | date:'longDate'}}</td>
+      <td>{{prescription?.patientName}}</td>
+      <td>{{prescription?.patientLastName}}</td>
+      <td>{{prescription?.patientPesel}}</td>
+      <td><button mat-stroked-button (click)="openPrescription(prescription)">{{'prescription.sd' | translate}}</button></td>
+    </tr>
+    </tbody>
+
+  </table>
+</div>

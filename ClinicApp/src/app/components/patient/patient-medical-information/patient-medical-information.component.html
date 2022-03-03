@@ -1,0 +1,167 @@
+<div class="body">
+
+  <div class="container" *ngIf="patient">
+
+    <div class= "row">
+
+    <div class="center">
+      <div class="alert alert-info" *ngIf="editFormPatientMedicalInformation.dirty">
+        <strong>{{'patient.inf' | translate}}</strong> Any unsaved changes will be lost
+      </div>
+    </div>
+
+    <form #editFormPatientMedicalInformation="ngForm" id="editFormPatientMedicalInformation"
+    (ngSubmit)="updatePatientCard()">
+
+      <div class="details">
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.ld' | translate}}</mat-label>
+          <textarea class="form-control" name="lifeDisease" [(ngModel)]="patient.lifeDisease" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.tr' | translate}}</mat-label>
+          <textarea class="form-control" name="treatments" [(ngModel)]="patient.treatments" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.alle' | translate}}</mat-label>
+          <textarea class="form-control" name="allergies" [(ngModel)]="patient.allergies" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.bg' | translate}}</mat-label>
+            <mat-select name = "bloodGroup" [(ngModel)]="patient.bloodGroup" class="input" required>
+              <mat-option value="DontKnow">Dont know</mat-option>
+              <mat-option value="0-">0-</mat-option>
+              <mat-option value="0+">0+</mat-option>
+              <mat-option value="B-">B-</mat-option>
+              <mat-option value="B+">B+</mat-option>
+              <mat-option value="A-">A-</mat-option>
+              <mat-option value="A+">A+</mat-option>
+              <mat-option value="AB-">AB-</mat-option>
+              <mat-option value="AB+">AB+</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.mtp' | translate}}</mat-label>
+          <textarea class="form-control" name="medicationsTakenPernamently"
+          [(ngModel)]="patient.medicationsTakenPernamently" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.q4' | translate}}</mat-label>
+          <textarea class="form-control" name="question1"
+          [(ngModel)]="patient.question1" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.q1' | translate}}</mat-label>
+          <textarea class="form-control" name="question2"
+          [(ngModel)]="patient.question2" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.q5' | translate}}</mat-label>
+          <textarea class="form-control" name="question3"
+          [(ngModel)]="patient.question3" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.q2' | translate}}</mat-label>
+          <textarea class="form-control" name="question4"
+          [(ngModel)]="patient.question4" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.q6' | translate}}</mat-label>
+          <textarea class="form-control" name="question5"
+          [(ngModel)]="patient.question5" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.q3' | translate}}</mat-label>
+          <textarea class="form-control" name="question6"
+          [(ngModel)]="patient.question6" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.nfz' | translate}}</mat-label>
+          <textarea class="form-control" name="nfzward"
+          [(ngModel)]="patient.nfZward" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.emp' | translate}}</mat-label>
+          <textarea class="form-control" name="employer"
+          [(ngModel)]="patient.employer" matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          cdkAutosizeMaxRows="3"></textarea>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>{{'patient.pa' | translate}}</mat-label>
+            <mat-select name = "policyAgreement" [(ngModel)]="patient.policyAgreement" class="input" matInput required>
+              <mat-option value="Agree">{{'patient.ag' | translate}}</mat-option>
+              <mat-option value="Disagree">{{'patient.dis' | translate}}</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+
+      </div>
+    </form>
+  </div>
+  </div>
+</div>
+
+<div class="center">
+  <button type="submit" form="editFormPatientMedicalInformation" class="btn btn-success btn-block">{{'patient.sav' | translate}}</button>
+</div>

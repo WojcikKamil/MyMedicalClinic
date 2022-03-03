@@ -1,0 +1,35 @@
+<div class="containerr">
+<div class="space" *ngIf="doctors">
+
+<div class="container mt-3">
+<mat-form-field class="example-full-width" appearance="fill">
+  <mat-label>Search by Specialization</mat-label>
+<input class="widther" matInput type = "text" #myInput [(ngModel)]="Specialization" (input)="Search()" />
+
+</mat-form-field>
+  &nbsp;
+  <button mat-stroked-button (click)="loadDoctors()">Reset Filter</button>
+
+</div>
+
+<div class="row">
+  <div *ngFor="let doctor of doctors" class="col-sm-2">
+    <app-doctor-card [member]="doctor"></app-doctor-card>
+  </div>
+</div>
+</div>
+
+<div class="d-flex justify-content-center" *ngIf="pagination">
+  <pagination
+  [boundaryLinks]="true"
+  [totalItems]="pagination.TotalItems"
+  [itemsPerPage]="pagination.ItemsPerPage"
+  [(ngModel)]="pagination.CurrentPage"
+  (pageChanged)="pageChanged($event)"
+  previousText="&lsaquo;"
+  nextText="&rsaquo;"
+  firstText="&laquo;"
+  lastText="&raquo;">
+  </pagination>
+</div>
+</div>

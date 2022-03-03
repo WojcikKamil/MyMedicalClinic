@@ -1,0 +1,52 @@
+.mat-toolbar.mat-custom {
+  background: rgb(224, 232, 233);
+  color: #696967;
+  justify-content: space-between;
+  padding-top: 0rem !important;
+  padding-bottom: 0rem !important;
+  border: 1px solid rgb(214, 212, 212);
+}
+
+a {
+  font-size: 22px;
+  padding-right: 1rem;
+  font-weight: 600;
+}
+
+input{
+  height:20px;
+  width:20px;
+  margin-right: 10px;
+  border-radius: 50%;
+  border: 1px solid rgb(168, 168, 168);
+}
+
+.title {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  font-weight: 500;
+  font-size: 2rem;
+}
+
+.margin{
+  margin: 5px;
+}
+
+.const{
+  margin-left: 50px;
+  float: left;
+  display: flex;
+  align-items: left;
+  align-content: left;
+}
+
+.right{
+  float: right !important;
+  align-items: right !important;
+  align-content: right !important;
+}
+
+em{
+  cursor: pointer;
+}

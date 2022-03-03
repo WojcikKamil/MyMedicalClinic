@@ -1,0 +1,34 @@
+<div class="container">
+
+  <div class="center">
+
+  <div class="btns" *appHasRole='["Doctor"]'>
+    <button mat-stroked-button color='accent'
+    (click)="addAppointment()" value="action" #action>{{'appointment.ap' | translate}}</button>
+  </div>
+
+    &nbsp;
+
+    <!--<button mat-flat-button color="primary"
+    (click)="getAppointmentList()">Load Appointment history</button>-->
+
+  </div>
+
+  <div class="row">
+    <table class="table">
+     <!-- <h1>Appointment history</h1> -->
+      <tr>
+        <th style="width:20%">{{'prescription.dd' | translate}}</th>
+        <th style="width:35%">{{'appointment.d' | translate}}</th>
+        <th style="width:20%">{{'prescription.sd' | translate}}</th>
+      </tr>
+
+      <tr *ngFor="let appointment of appointments">
+        <td>{{appointment?.appointmentDate | date:'longDate'}}
+        <td><b>{{appointment?.doctorName}} {{appointment?.doctorLastName}}</b></td>
+        <td><button mat-stroked-button (click)="openAppointment(appointment)">{{'prescription.sd' | translate}}</button></td>
+      </tr>
+
+    </table>
+  </div>
+  </div>

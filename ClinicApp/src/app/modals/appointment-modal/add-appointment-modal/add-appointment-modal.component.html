@@ -1,0 +1,104 @@
+<div class="container">
+  <div class="modal-header">
+    <h1 class="modal-title">{{'appointment.af' | translate}}</h1>
+    <button type="button" class="close pull-right" aria-label="Close"
+    (click)="bsModalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    </div>
+    <div class="modal-body">
+      <h2><i class="fas fa-id-card-alt"></i></h2>
+
+      <form #addRequest="ngForm"
+      (ngSubmit)="sendRequest()" autocomplete="off">
+
+
+        <div class="content" *appHasRole='["Admin"]'>
+          <mat-form-field appearance="fill">
+          <textarea matInput
+          name="userName" required
+          [(ngModel)]="userName"
+          type = "text"
+          class="form-control input-sm"
+          placeholder="Content"></textarea>
+          </mat-form-field>
+        </div>
+
+        <div class="wrapper">
+
+          <div class="left">
+
+          <mat-form-field appearance="fill">
+            <mat-label class="placeholder-color">{{'appointment.ar' | translate}}</mat-label>
+          <textarea matInput
+          name="reason" required
+          [(ngModel)]="reason"
+          type = "text"
+          class="form-control input-sm"
+          ></textarea>
+          </mat-form-field>
+
+            <mat-form-field appearance="fill">
+              <mat-label class="placeholder-color">{{'appointment.r' | translate}}</mat-label>
+            <textarea matInput
+            name="recommendation" required
+            [(ngModel)]="recommendation"
+            type = "text"
+            class="form-control input-sm"
+            ></textarea>
+            </mat-form-field>
+
+              <mat-form-field appearance="fill">
+                <mat-label class="placeholder-color">{{'appointment.do' | translate}}</mat-label>
+              <textarea matInput
+              name="dose"
+              [(ngModel)]="dose"
+              type = "text"
+              class="form-control input-sm"
+              ></textarea>
+              </mat-form-field>
+
+          </div>
+
+          <div class="right">
+
+              <mat-form-field appearance="fill">
+                <mat-label class="placeholder-color">{{'appointment.di' | translate}}</mat-label>
+              <textarea matInput
+              name="diagnosis" required
+              [(ngModel)]="diagnosis"
+              type = "text"
+              class="form-control input-sm"
+              ></textarea>
+              </mat-form-field>
+
+                <mat-form-field appearance="fill">
+                  <mat-label class="placeholder-color">{{'appointment.med' | translate}}</mat-label>
+                <textarea matInput
+                name="medicines"
+                [(ngModel)]="medicines"
+                type = "text"
+                class="form-control input-sm"
+                ></textarea>
+                </mat-form-field>
+
+                  <mat-form-field appearance="fill">
+                    <mat-label class="placeholder-color">{{'appointment.rd' | translate}}</mat-label>
+                  <textarea matInput
+                  name="recommendedDose"
+                  [(ngModel)]="recommendedDose"
+                  type = "text"
+                  class="form-control input-sm"
+                  ></textarea>
+                  </mat-form-field>
+          </div>
+        </div>
+    </form>
+
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-default" (click)="bsModalRef.hide()">{{'appointment.c' | translate}}</button>
+      <button mat-stroked-button color="accent" (click)="sendRequest()">{{'appointment.s' | translate}}</button>
+    </div>
+</div>

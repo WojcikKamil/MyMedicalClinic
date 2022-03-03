@@ -1,0 +1,29 @@
+h1{
+  font-size: 30px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.container{
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  max-width: 500px;
+  width: 100%;
+  padding: 30px 30px;
+  margin-top:20px;
+  background-color:#e2e2e2;
+  border: 5px solid #17124b;
+  border-radius: 20px;
+  padding-bottom: 20px;
+  min-height: 400px;
+}
+
+.try{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
